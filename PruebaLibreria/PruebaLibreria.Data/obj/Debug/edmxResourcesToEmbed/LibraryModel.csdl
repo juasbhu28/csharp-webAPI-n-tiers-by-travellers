@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.autores_has_libros" FromRole="autores" ToRole="libros" />
+  </EntityType>
+  <EntityType Name="Editorial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_libros_ToEditoriales" FromRole="editoriales" ToRole="libros" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="ISBN" />
+    </Key>
+    <Property Name="ISBN" Type="Int32" Nullable="false" />
+    <Property Name="IdEditorial" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Synpsis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Pages" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Editorials" Relationship="Self.FK_libros_ToEditoriales" FromRole="libros" ToRole="editoriales" />
+    <NavigationProperty Name="Authors" Relationship="Self.autores_has_libros" FromRole="libros" ToRole="autores" />
+  </EntityType>
+  <EntityType Name="AuthorsView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="LastName" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_libros_ToEditoriales">
+    <End Role="editoriales" Type="LibraryModel.Editorial" Multiplicity="0..1" />
+    <End Role="libros" Type="LibraryModel.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="editoriales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="libros">
+        <PropertyRef Name="IdEditorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="autores_has_libros">
+    <End Role="autores" Type="LibraryModel.Author" Multiplicity="*" />
+    <End Role="libros" Type="LibraryModel.Book" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="LibraryModel.Author" />
+    <EntitySet Name="Editorials" EntityType="LibraryModel.Editorial" />
+    <EntitySet Name="Books" EntityType="LibraryModel.Book" />
+    <EntitySet Name="AuthorsView" EntityType="LibraryModel.AuthorsView" />
+    <AssociationSet Name="FK_libros_ToEditoriales" Association="Self.FK_libros_ToEditoriales">
+      <End Role="editoriales" EntitySet="Editorials" />
+      <End Role="libros" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="autores_has_libros" Association="Self.autores_has_libros">
+      <End Role="autores" EntitySet="Authors" />
+      <End Role="libros" EntitySet="Books" />
+    </AssociationSet>
+    <EntitySet Name="AuthorsByEditorialView" EntityType="LibraryModel.AuthorsByEditorialView" />
+  </EntityContainer>
+  <EntityType Name="AuthorsByEditorialView">
+    <Key>
+      <PropertyRef Name="Author" />
+      <PropertyRef Name="EditorialId" />
+      <PropertyRef Name="Editorial" />
+    </Key>
+    <Property Name="Author" Type="String" Nullable="false" MaxLength="91" FixedLength="false" Unicode="false" />
+    <Property Name="EditorialId" Type="Int32" Nullable="false" />
+    <Property Name="Editorial" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

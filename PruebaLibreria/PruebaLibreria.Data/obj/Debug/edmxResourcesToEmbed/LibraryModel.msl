@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="LibraryModel.Author">
+        <MappingFragment StoreEntitySet="autores">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="nombre" />
+          <ScalarProperty Name="LastName" ColumnName="apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editorials">
+      <EntityTypeMapping TypeName="LibraryModel.Editorial">
+        <MappingFragment StoreEntitySet="editoriales">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="nombre" />
+          <ScalarProperty Name="Location" ColumnName="sede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="LibraryModel.Book">
+        <MappingFragment StoreEntitySet="libros">
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="IdEditorial" ColumnName="editoriales_id" />
+          <ScalarProperty Name="Title" ColumnName="titulo" />
+          <ScalarProperty Name="Synpsis" ColumnName="sinopsis" />
+          <ScalarProperty Name="Pages" ColumnName="n_paginas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorsView">
+      <EntityTypeMapping TypeName="LibraryModel.AuthorsView">
+        <MappingFragment StoreEntitySet="AutoresView">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="nombre" />
+          <ScalarProperty Name="LastName" ColumnName="apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="autores_has_libros" TypeName="LibraryModel.autores_has_libros" StoreEntitySet="autores_has_libros">
+      <EndProperty Name="autores">
+        <ScalarProperty Name="Id" ColumnName="autores_id" />
+      </EndProperty>
+      <EndProperty Name="libros">
+        <ScalarProperty Name="ISBN" ColumnName="libros_ISBN" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="AuthorsByEditorialView">
+      <EntityTypeMapping TypeName="LibraryModel.AuthorsByEditorialView">
+        <MappingFragment StoreEntitySet="AutoresByEditorialView">
+          <ScalarProperty Name="Editorial" ColumnName="Editorial" />
+          <ScalarProperty Name="EditorialId" ColumnName="Id_Editorial" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

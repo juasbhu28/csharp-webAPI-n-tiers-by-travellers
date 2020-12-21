@@ -1,0 +1,86 @@
+2020-12-19 07:09:55	This log contains information about the import schema operation into project 'PruebaLibreria.DataBase' on computer 'JUASBHU' by user 'juasb'.
+2020-12-19 07:09:55	Import of database schema has started.
+2020-12-19 07:10:00	Gathering database credentials
+2020-12-19 07:10:00	Gathering database options
+2020-12-19 07:10:00	Gathering generic database scoped configuration option
+2020-12-19 07:10:00	Gathering users
+2020-12-19 07:10:00	Gathering roles
+2020-12-19 07:10:00	Gathering application roles
+2020-12-19 07:10:00	Gathering role memberships
+2020-12-19 07:10:00	Gathering filegroups
+2020-12-19 07:10:00	Gathering full-text catalogs
+2020-12-19 07:10:00	Gathering assemblies
+2020-12-19 07:10:00	Gathering certificates
+2020-12-19 07:10:00	Gathering asymmetric keys
+2020-12-19 07:10:00	Gathering symmetric keys
+2020-12-19 07:10:00	Gathering encrypted symmetric keys
+2020-12-19 07:10:00	Gathering schemas
+2020-12-19 07:10:00	Gathering XML schema collections
+2020-12-19 07:10:00	Gathering user-defined data types
+2020-12-19 07:10:00	Gathering user-defined types
+2020-12-19 07:10:00	Gathering table types
+2020-12-19 07:10:00	Gathering unique keys for table types
+2020-12-19 07:10:00	Gathering primary keys for table types
+2020-12-19 07:10:00	Gathering indexes for table types
+2020-12-19 07:10:00	Gathering check constraints for table types
+2020-12-19 07:10:00	Gathering default constraints for table types
+2020-12-19 07:10:00	Gathering partition functions
+2020-12-19 07:10:00	Gathering partition schemes
+2020-12-19 07:10:00	Gathering functions
+2020-12-19 07:10:00	Gathering encrypted functions
+2020-12-19 07:10:00	Gathering aggregates
+2020-12-19 07:10:00	Gathering procedures
+2020-12-19 07:10:00	Gathering encrypted procedures
+2020-12-19 07:10:00	Gathering tables
+2020-12-19 07:10:00	Gathering primary keys
+2020-12-19 07:10:00	Gathering unique constraints
+2020-12-19 07:10:00	Gathering foreign keys
+2020-12-19 07:10:00	Gathering default constraints
+2020-12-19 07:10:00	Gathering check constraints
+2020-12-19 07:10:00	Gathering views
+2020-12-19 07:10:00	Gathering encrypted views
+2020-12-19 07:10:00	Gathering indexes
+2020-12-19 07:10:00	Gathering statistics
+2020-12-19 07:10:00	Gathering full-text index stoplists
+2020-12-19 07:10:00	Gathering search property lists
+2020-12-19 07:10:00	Gathering search properties
+2020-12-19 07:10:00	Gathering full-text indexes
+2020-12-19 07:10:00	Gathering column store indexes
+2020-12-19 07:10:00	Gathering spatial indexes
+2020-12-19 07:10:00	Gathering XML indexes
+2020-12-19 07:10:00	Gathering Selective XML indexes
+2020-12-19 07:10:00	Gathering encrypted triggers
+2020-12-19 07:10:00	Gathering triggers
+2020-12-19 07:10:00	Gathering encrypted and clr ddl triggers
+2020-12-19 07:10:00	Gathering ddl triggers
+2020-12-19 07:10:00	Gathering synonyms
+2020-12-19 07:10:00	Gathering defaults
+2020-12-19 07:10:00	Gathering data constraint uddt bindings
+2020-12-19 07:10:00	Gathering rules
+2020-12-19 07:10:00	Gathering data constraint uddt bindings
+2020-12-19 07:10:00	Gathering message types
+2020-12-19 07:10:00	Gathering queues
+2020-12-19 07:10:00	Gathering contracts
+2020-12-19 07:10:00	Gathering services
+2020-12-19 07:10:00	Gathering event notifications
+2020-12-19 07:10:00	Gathering remote service bindings
+2020-12-19 07:10:00	Gathering broker priorities
+2020-12-19 07:10:00	Gathering signatures
+2020-12-19 07:10:00	Gathering data compression options
+2020-12-19 07:10:00	Gathering sequence types
+2020-12-19 07:10:00	Gathering security policies
+2020-12-19 07:10:00	Gather column encryption keys
+2020-12-19 07:10:00	Gathering column master keys
+2020-12-19 07:10:00	Gathering external data sources
+2020-12-19 07:10:00	Gathering external file formats
+2020-12-19 07:10:00	Gathering external tables
+2020-12-19 07:10:00	Gathering extended properties
+2020-12-19 07:10:01	Gathering credentials
+2020-12-19 07:10:01	Gathering logins
+2020-12-19 07:10:01	Gathering server audits
+2020-12-19 07:10:01	An exception was encountered while attempting to retrieve the default data path: ''.  As a result, absolute paths may appear in ADD FILE statements.
+2020-12-19 07:10:01	Scanning project for duplicate elements
+2020-12-19 07:10:01	Finished duplicate element processing
+2020-12-19 07:10:01	Finished importing database.
+2020-12-19 07:10:01	A summary of the import was saved to the following location: E:\Documents\cSharp\Viajeros\PruebaLibreria\PruebaLibreria.DataBase\Import Schema Logs\PruebaLibreria.DataB_20201219120955.log
+2020-12-19 07:10:01	Click Finish to continue...

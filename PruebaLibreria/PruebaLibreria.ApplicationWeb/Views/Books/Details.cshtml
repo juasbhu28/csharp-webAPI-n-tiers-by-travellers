@@ -1,0 +1,58 @@
+﻿@model PruebaLibreria.Entities.Book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Book</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Synpsis)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Synpsis)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pages)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pages)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Editorials.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Editorials.Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ISBN }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
